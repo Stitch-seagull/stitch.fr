@@ -7,45 +7,138 @@
     src: url("./fonts/RobotoMono-BoldItalic.ttf")format("truetype");
 }
 
-body {
+/*Global Containers */
+* {
     margin: 0;
     padding: 0;
-    background-color: #000000;
+}
+
+.outer-container {
+    height: 100dvh;
+    width: 100dvw;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
     font-family: "Roboto Mono Bold";
     color: white;
-}
 
-.top-rectangle {
-    display: flex;
-    text-wrap: nowrap;
-
-    border: white solid 2px;
-    margin: 1vw;
-    margin-top: 2vw;
-}
-
-.top-rectangle .left-text {
+    height: 90%;
     width: 90%;
-    padding: 0.5vh;
-    padding-left: 1vw;
-    font-size: 130%;
-    text-align: left;
 }
 
-.top-rectangle .right-text {
-    width: 10%;
-    padding: 0.5vh;
-    padding-right: 1vw;
-    font-size: 130%;
-    text-align: center;
+/* Header Properties */
 
-    border-left: white solid 2px;
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    
+    flex : 1;
+
+    font-family: "Roboto Mono Bold";
+    font-size: 1.5rem;
+    outline: solid 3px white;
 }
 
-.name {
-    font-size: 25vh;
+
+.left-header {
+    flex: 8;
+    font-size: 2rem;
+}
+
+.right-header {
+   flex: 2;
+   height: 100%;
+   text-align: right;
+   outline: solid 3px white;
+}
+
+.header-items {
+   padding: 5%;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+}
+
+.portfolioName {
+    padding: 2%;
+}
+
+.dateItem {
+    margin-bottom: 3%;
+    font-size: 2rem;
+}
+
+.quoteItem {
+    font-size: 1rem;
     font-family: "Roboto Mono Bold Italic";
+}
+
+/* Main Properties */
+
+main {
+    flex : 9;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.text {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+}
+
+.subText {
+    margin-top: 3%;
+}
+
+.mainName {
+    flex: 8;
     text-align: center;
+    font-size: 15dvw;
+    font-family: "Roboto Mono Bold Italic";
     letter-spacing: 0.3em;
 }
 
+.aside-logos {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    align-self: flex-end;
+    margin-right: -4%;
+}
+
+.left-hr {
+    flex: 1;
+    align-self: flex-start;
+    margin-top: 3%;
+}
+
+.right-hr {
+    margin-bottom: 20px;
+}
+
+hr {
+    width: 0px;
+    height: 200px;
+    border: solid 1px white;
+}
+
+.icons {
+    height: 30px;
+    width: 30px;
+}
