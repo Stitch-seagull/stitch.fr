@@ -7,10 +7,14 @@
     src: url("./fonts/RobotoMono-BoldItalic.ttf")format("truetype");
 }
 
-/*Global Containers */
+/*Global Properties and Containers */
 * {
     margin: 0;
     padding: 0;
+}
+
+body {
+    overflow: hidden;
 }
 
 .outer-container {
@@ -31,6 +35,11 @@
 
     height: 90%;
     width: 90%;
+}
+
+a {
+    text-decoration: none;
+    color: gray;
 }
 
 /* Header Properties */
@@ -68,16 +77,16 @@ header {
    justify-content: center;
 }
 
-.portfolioName {
+#portfolioName {
     padding: 2%;
 }
 
-.dateItem {
+#dateItem {
     margin-bottom: 3%;
     font-size: 2rem;
 }
 
-.quoteItem {
+#quoteItem {
     font-size: 1rem;
     font-family: "Roboto Mono Bold Italic";
 }
@@ -100,10 +109,14 @@ main {
 }
 
 .subText {
+    margin-top: 3px;
+}
+
+#topSubText {
     margin-top: 3%;
 }
 
-.mainName {
+#mainName {
     flex: 8;
     text-align: center;
     font-size: 15dvw;
@@ -126,11 +139,18 @@ main {
     flex: 1;
     align-self: flex-start;
     margin-top: 3%;
+    
+    animation-duration: 1.5s;
+    animation-name: fadeSlideFromBottom;
 }
 
 .right-hr {
     margin-bottom: 20px;
+
+    animation-duration: 1.5s;
+    animation-name: fadeSlideFromTop;
 }
+
 
 hr {
     width: 0px;
@@ -141,4 +161,64 @@ hr {
 .icons {
     height: 30px;
     width: 30px;
+
+    animation-duration: 1.5s;
+    animation-name: fadeSlideFromTop;
+}
+
+/* Frame Properties */
+
+#mainFrame {
+    position: absolute;
+    z-index: 99;
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+    pointer-events: none;
+    /*opacity: 0;
+
+    animation-duration: 1.5s;
+    animation-name: fade;
+    animation-delay: 3s;
+    animation-fill-mode: forwards*/
+}
+
+/* Animations */
+
+@keyframes fadeSlideFromBottom {
+    from {
+        opacity: 0;
+        transform: translateY(+100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0%);
+    }
+    
+}
+
+@keyframes fadeSlideFromTop {
+    from {
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0%);
+    }
+}
+
+@keyframes fade {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/*Selection Properties */
+::selection {
+    background-color: white;
+    color: black;
 }
